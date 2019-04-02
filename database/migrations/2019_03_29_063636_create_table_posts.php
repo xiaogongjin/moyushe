@@ -23,6 +23,7 @@ class CreateTablePosts extends Migration
 	        $table->integer('up_times')->default(0);
 	        $table->integer('down_times')->default(0);
 	        $table->dateTime('last_comments_at');
+	        $table->bigInteger('last_comments_user_id');
 	        $table->softDeletes();
             $table->timestamps();
         });

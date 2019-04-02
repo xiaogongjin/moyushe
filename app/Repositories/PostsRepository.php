@@ -14,4 +14,17 @@ class PostsRepository
 	{
 		$this->model = $posts;
 	}
+
+	public function withUser()
+	{
+		$this->model = $this->model->with('user')->with('lastCommentUser');
+		return $this;
+	}
+
+	public function page($number = 10, $sort = 'desc', $sortColumn = 'created_at')
+	{
+		return $this->model->orderBy($sortColumn, $sort)->paginate($number);
+	}
+
+
 }

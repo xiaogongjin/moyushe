@@ -10,4 +10,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected $pageData;
+	protected $posts;
+
+	public function __construct()
+	{
+		$this->pageData['settings'] = config('pageDataSetting');
+	}
 }

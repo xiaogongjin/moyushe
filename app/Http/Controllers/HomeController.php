@@ -2,18 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\PostsRepository;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+
+	/**
+	 * HomeController constructor.
+	 * @param PostsRepository $posts
+	 */
+	public function __construct(PostsRepository $posts)
     {
-        $this->middleware('auth');
+    	parent::__construct();
+    	$this->posts = $posts;
+        //$this->middleware('auth');
     }
 
     /**
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+	    $this->pageData['title'] = '首页';
+	    $posts = $this->posts->withUser()->page(config('posts.read.number'), config('posts.read.sort'), config('posts.read.sortColumn'));
+	    $this->pageData['posts'] = $posts;
+	    return view('home',$this->pageData);
     }
 }
