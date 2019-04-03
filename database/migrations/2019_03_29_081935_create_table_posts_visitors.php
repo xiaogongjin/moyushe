@@ -13,7 +13,7 @@ class CreateTablePostsVisitors extends Migration
      */
     public function up()
     {
-        Schema::create('posts_visitors', function (Blueprint $table) {
+        Schema::create('posts_visitor', function (Blueprint $table) {
             $table->bigIncrements('id');
 	        $table->bigInteger('posts_id');
 	        $table->bigInteger('user_id')->default(0);

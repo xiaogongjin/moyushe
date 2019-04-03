@@ -20,7 +20,7 @@
                         回复于 <abbr>1
                             天前</abbr> ·
                         @endif
-                        <span>${topic.views}</span> 次阅读
+                        <span>{{$clicks}}</span> 次阅读
                     </div>
                 </div>
                 <div class="has-text-right">

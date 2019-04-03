@@ -12,8 +12,12 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected $pageData;
+
 	protected $posts;
+
 	protected $comments;
+
+	protected $visitor;
 
 	public function __construct()
 	{
