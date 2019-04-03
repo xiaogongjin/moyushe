@@ -13,6 +13,7 @@ class Controller extends BaseController
 
     protected $pageData;
 	protected $posts;
+	protected $comments;
 
 	public function __construct()
 	{

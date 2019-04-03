@@ -21,6 +21,11 @@ class PostsRepository
 		return $this;
 	}
 
+	public function getFirstById($id)
+	{
+		return $this->model->where('id', $id)->first();
+	}
+
 	public function page($number = 10, $sort = 'desc', $sortColumn = 'created_at')
 	{
 		return $this->model->orderBy($sortColumn, $sort)->paginate($number);

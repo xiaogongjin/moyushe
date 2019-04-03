@@ -13,9 +13,9 @@ class CreateTablePostsComments extends Migration
      */
     public function up()
     {
-    	for ($i = 0;$i<100;$i++) {
-		    $table_id = str_pad($i,2,0,STR_PAD_LEFT);
-		    Schema::create('posts_comments_'.$table_id, function (Blueprint $table) {
+//    	for ($i = 0;$i<100;$i++) {
+//		    $table_id = str_pad($i,2,0,STR_PAD_LEFT);
+		    Schema::create('posts_comments', function (Blueprint $table) {
 			    $table->bigIncrements('id');
 			    $table->bigInteger('user_id');
 			    $table->bigInteger('posts_id');
@@ -27,7 +27,7 @@ class CreateTablePostsComments extends Migration
 			    $table->softDeletes();
 			    $table->timestamps();
 		    });
-	    }
+//	    }
     }
 
     /**

@@ -7,79 +7,44 @@
             <div class="message-header">
                 <div class="has-text-left">
                     <div style="padding-bottom: 10px;">
-                        <a href="${siteUrl('/go/' + topic.nodeSlug)}" title="${topic.nodeTitle}">${topic.nodeTitle}</a>
+                        <a href="${siteUrl('/go/' + topic.nodeSlug)}" title="${topic.nodeTitle}">分类名</a>
                         /
-                        <span style="color: #222527;">${topic.title}</span>
+                        <span style="color: #222527;">{{$posts->title}}</span>
                     </div>
                     <div class="topic-head-meta">
                         <a href="${siteUrl('/@' + topic.username)}"
-                           title="${topic.username}"><b>${topic.username}</b></a> · 发布于 <abbr>8 天前</abbr>
+                           title="${topic.username}"><b>{{$posts->user->name}}</b></a> · 发布于 <abbr>8 天前</abbr>
                         ·
-                        #if(null != topic.replyUser)
-                        最后由 <a href="${siteUrl('/@' + topic.replyUser)}" title="${topic.replyUser}"><b>${topic.replyUser}</b></a>
+                        @if($posts->lastCommentUser)
+                        最后由 <a href="${siteUrl('/@' + topic.replyUser)}" title="${topic.replyUser}"><b>{{$posts->lastCommentUser->name}}</b></a>
                         回复于 <abbr>1
                             天前</abbr> ·
-                        #end
+                        @endif
                         <span>${topic.views}</span> 次阅读
                     </div>
                 </div>
                 <div class="has-text-right">
                     <p class="image is-48x48">
                         <a href="${siteUrl('/@' + topic.username)}">
-                            <img class="avatar-48" src="${topic.avatar}">
+                            <img class="avatar-48" src="https://cdn.v2ex.com/avatar/ca0c/8972/288560_large.png?m=1518510592">
                         </a>
                     </p>
                 </div>
 
             </div>
             <div class="content topic-content">
-                ${topic.content}
+                {{$posts->content}}
             </div>
             <div class="message-header topic-footer">
                 <div class="has-text-left">
-                    <span>${topic.likes} 个赞</span>&nbsp;·&nbsp;
+                    <span>{{$posts->up_times}} 个赞</span>&nbsp;·&nbsp;
                     <span>收藏</span>&nbsp;·&nbsp;
-                    #include('../partials/share.html')
+                    @include('partials.share')
                 </div>
             </div>
         </div>
 
-        #if(topic.comments > 0)
-        <div class="message is-light">
-            <div class="message-header">
-                <div class="has-text-left">
-                    <div class="topic-head-meta">
-                        ${topic.comments} 回复 | 最后回复 2017-08-02 16:38:19
-                    </div>
-                </div>
-            </div>
-            <div class="content">
-                #for(comment : topic.commentList)
-                <article id="reply-${comment.coid}" class="media" style="padding: 8px 10px; margin-top:0;">
-                    <figure class="media-left" style="padding: 5px 0;">
-                        <p class="image is-48x48">
-                            <a href="${siteUrl('/@' + comment.author)}">
-                                <img class="avatar-48" src="${comment.avatar}">
-                            </a>
-                        </p>
-                    </figure>
-                    <div class="media-content">
-                        <div class="topic-head-meta">
-                            <a href="${siteUrl('/@' + comment.author)}"><b>${comment.author}</b></a> ·
-                            回复于 ${comment.created} · <a href="#reply-${comment.coid}">#${for.index}</a>
-                        </div>
-                        <div style="margin-top: 10px;">
-                            ${comment.content}
-                        </div>
-                    </div>
-                    <div class="media-right" style="line-height: 55px;">
-                        <!-- TODO: 回复该评论 -->
-                    </div>
-                </article>
-                #end
-            </div>
-        </div>
-        #end
+       @include("include.comments_data")
 
         @if(auth()->check())
         <div class="message is-light">

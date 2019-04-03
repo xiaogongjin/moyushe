@@ -2,20 +2,17 @@
 
 namespace App\Model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class PostsComments extends Model
 {
     //
-	protected $table = 'posts_comment';
+	protected $table = 'posts_comments';
 
-	/**
-	 * @param string $table_id
-	 * @return PostsComments
-	 */
-	public function setTable($table_id)
+
+	public function user()
 	{
-		$this->table = $table_id;
-		return $this;
+		return $this->belongsTo(User::class, 'user_id', 'id');
 	}
 }
