@@ -42,7 +42,7 @@ class PostsController extends Controller
 	public function detail($posts_id)
 	{
 		$posts = $this->posts->withUser()->getFirstById($posts_id);
-		$comments = $this->comments->withUser()->page();
+		$comments = $this->comments->withUser()->page($posts_id);
 		$this->visitor->log($posts_id);
 		$this->pageData['clicks'] = $this->visitor->getPostsClicks($posts_id);
 		$this->pageData['posts'] = $posts;

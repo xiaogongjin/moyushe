@@ -10,7 +10,7 @@
         <div class="media-content">
             <div class="content">
                 <p class="topic-title">
-                    <a href="${siteUrl('/topic/' + topic.tid)}" title="${topic.title}">{{$item->title}}</a>
+                    <a href="{{route("posts_detail",["id"=>$item->id])}}" title="${topic.title}">{{$item->title}}</a>
                 </p>
                 <p class="topic-meta">
                     <a class="topic-meta" href="${siteUrl('/node/' + topic.nodeSlug)}" title="${topic.nodeTitle}">{{$item->content}}</a>

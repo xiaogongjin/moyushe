@@ -22,9 +22,9 @@ class PostsCommentsRepository
 	}
 
 
-	public function page($number = 10, $sort = 'asc', $sortColumn = 'id')
+	public function page($post_id,$number = 10, $sort = 'asc', $sortColumn = 'id')
 	{
-		return $this->model->orderBy($sortColumn, $sort)->paginate($number);
+		return $this->model->where('posts_id',$post_id)->orderBy($sortColumn, $sort)->paginate($number);
 	}
 
 
