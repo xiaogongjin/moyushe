@@ -11,8 +11,8 @@
     </div>
     <form class="form-inline">
         <div class="col-md-6 form-group">
-            <input id="sendbox" type="text" class="text" onkeydown="if(event.keyCode==13)return false;" required>
-            <button id="sendbtn" type="button" class="btn btn-is-link">发送</button>
+            <input id="sendbox" type="text" class="text" style="background-color:lightyellow;width: 80%;height: 33px;border: none" onkeydown="if(event.keyCode==13)return false;" required>
+            <button id="sendbtn" type="button" style="border-radius: 0;height:33px;border: none;width: 18%" class="button btn-is-link">发送</button>
         </div>
 
     </form>

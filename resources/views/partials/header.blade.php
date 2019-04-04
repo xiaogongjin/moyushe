@@ -1,7 +1,7 @@
 <div class="header">
     <nav class="navbar container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="${siteUrl()}">
+            <a class="navbar-item" href="{{route("index")}}">
                 <img src="/static/images/logo.png" alt="Roo 简洁的"
                      width="112" height="28">
             </a>
@@ -27,23 +27,23 @@
 
         <div id="navMenuExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item " href="${siteUrl('/topics')}">
+                <a class="navbar-item " href="{{route("index")}}">
                     <span class="emoji">🦌&nbsp;</span>
                     首页
                 </a>
-                <a class="navbar-item " href="${siteUrl('/news')}">
+                <a class="navbar-item " href="{{route("posts_index",['category'=>1])}}">
                     <span class="emoji">🤛&nbsp;</span>
                     摸鱼图
                 </a>
-                <a class="navbar-item " href="${siteUrl('/go/jobs')}">
+                <a class="navbar-item " href="{{route("posts_index",['category'=>2])}}">
                     <span class="emoji">💁&nbsp;</span>
                     大家都在摸
                 </a>
-                <a class="navbar-item " href="${siteUrl('/wiki')}">
+                <a class="navbar-item " href="{{route("posts_index",['category'=>3])}}">
                     <span class="emoji">🎨&nbsp;</span>
                     LIVE
                 </a>
-                <a class="navbar-item " href="${siteUrl('/sites')}">
+                <a class="navbar-item " href="{{route("posts_index",['category'=>4])}}">
                     <span class="emoji">❤️&nbsp;</span>
                     酷站
                 </a>
