@@ -30,21 +30,9 @@
         </div>
     </div>
     @endif
-
-    <div class="message is-light">
-        <div class="message-header">推荐编程资源</div>
-        <div class="message-body">
-            <ul>
-                <li>
-                    <a href="">开发者头条</a>
-                </li>
-                <li>
-                    <a href="">并发编程网</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
+    @if(\Illuminate\Support\Facades\Request::route()->getName() == 'index')
+        @include('include.im')
+    @endif
     <div class="message is-light">
         <div class="message-header">友情链接</div>
         <div class="message-body has-text-centered">

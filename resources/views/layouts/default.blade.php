@@ -14,8 +14,9 @@
     <link href="/static/css/bulma.min.css" rel="stylesheet"/>
     <link href="/static/plugins/noty/noty.css" rel="stylesheet"/>
     <link rel="stylesheet" href="/static/css/roo.css?v=${version}"/>
-    <script type="text/javascript" src="/webjars/jquery/2.2.4/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/im/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="/static/js/roo.js?v=${version}"></script>
+    @stack("js")
     <script type="text/javascript">
         Roo.Config = {
             current_user: "{{auth()->check()?auth()->user()->name:''}}",

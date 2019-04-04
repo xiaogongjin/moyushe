@@ -73,7 +73,7 @@
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link is-active" href="javascript:void(0);">
+                    <a class="navbar-link is-active" id="uname" href="javascript:void(0);">
                         {{auth()->user()->name}}
                     </a>
                     <div class="navbar-dropdown ">
