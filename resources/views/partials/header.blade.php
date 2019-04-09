@@ -2,8 +2,8 @@
     <nav class="navbar container">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{route("index")}}">
-                <img src="/static/images/logo.png" alt="Roo 简洁的"
-                     width="112" height="28">
+                <img src="/static/images/logo.png" alt="摸鱼社" width="48" height="48">
+                <span style="color: #9829f0"> 摸鱼社</span>
             </a>
 
             <a class="navbar-item is-hidden-desktop" href="https://github.com/jgthms/bulma" target="_blank">
