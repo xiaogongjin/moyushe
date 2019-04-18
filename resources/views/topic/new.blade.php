@@ -15,7 +15,7 @@
 
                         <input type="hidden" name="nodeTitle" id="nodeTitle"/>
                         <input type="hidden" name="textType" id="textType" value="1"/>
-                        <input type="hidden" name="csrf_token" value="${csrf_token}"/>
+                        <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
 
                         <div class="field">
                             <div class="control">
@@ -42,7 +42,7 @@
 
                         <div class="field">
                             <div class="control">
-                                <textarea id="editor" name="content" class="textarea" placeholder="请输入主题内容"
+                                <textarea id="editor" name="content" class="textarea" placeholder="请输入主题内容" style="height: 300px"
                                           required></textarea>
                             </div>
                         </div>
@@ -52,15 +52,11 @@
                                 <button id="publish-btn" type="submit" class="button is-link">发布主题</button>
                             </div>
                             <div class="control">
-                                <a href="${siteUrl('/')}" class="button">取消发布</a>
+                                <a href="{{route("index")}}" class="button">取消发布</a>
                             </div>
                         </div>
                     </div>
                 </form>
-            </div>
-
-            <div class="message-header">
-            <a href="">使用富文本编辑器</a>
             </div>
 
         </div>

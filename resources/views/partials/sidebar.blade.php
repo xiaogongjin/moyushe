@@ -11,7 +11,7 @@
         <div class="message-header">Roo 社区</div>
         <div class="message-body has-text-centered">
             <h6 class="subtitle is-6">
-                <a class="button is-danger" href="${siteUrl('/topic/new')}">
+                <a class="button is-danger" href="{{route("posts_new")}}">
                     <span class="icon">
                       <i class="fa fa-pencil-square-o"></i>
                     </span>

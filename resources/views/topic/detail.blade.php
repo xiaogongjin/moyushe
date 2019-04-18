@@ -33,7 +33,7 @@
 
             </div>
             <div class="content topic-content">
-                {{$posts->content}}
+                @markdown($posts->content)
             </div>
             <div class="message-header topic-footer">
                 <div class="has-text-left">

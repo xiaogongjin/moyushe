@@ -18,6 +18,7 @@ Route::get('/logout', 'Auth/HomeController@index')->name('home');
 Route::get('/posts/detail/{id}', 'PostsController@detail')->name('posts_detail');
 
 Route::get('/posts/{category}', 'PostsController@index')->name('posts_index');
+Route::get('/create/posts', 'PostsNewController@index')->name('posts_new');
 Route::get('/popular', 'PopularController@index')->name('popular_index');
 Auth::routes();
 
